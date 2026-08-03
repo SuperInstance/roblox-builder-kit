@@ -1,0 +1,20 @@
+{
+  "name": "roblox-builder-kit",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "BuilderKit": {
+        "$path": "src/BuilderKit.lua"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "BuilderKitServer": {
+        "$className": "Script",
+        "$properties": {
+          "Source": "-- BuilderKit server entry point\n-- Require BuilderKit from ReplicatedStorage and start building.\n\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal BuilderKit = require(ReplicatedStorage:WaitForChild(\"BuilderKit\"))\n\n-- Example: build a simple platform on startup\nBuilderKit.execute({\n    type = \"createPart\",\n    params = {\n        name = \"SpawnPlatform\",\n        position = { x = 0, y = 5, z = 0 },\n        size = { x = 16, y = 1, z = 16 },\n        material = \"SmoothPlastic\",\n        color = \"#4A90D9\"\n    }\n})\n\nprint(\"[BuilderKit] Server initialized — SpawnPlatform created\")"
+      }
+    }
+  }
+}
