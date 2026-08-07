@@ -5,3 +5,8 @@ node_modules/
 *.rbxl
 *.rbxlx.lock
 
+__pycache__/
+*.pyc
+.coverage
+.pytest_cache/
+.wrangler/
